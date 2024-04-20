@@ -10,17 +10,17 @@ Disclaimer: I do not know Rust. I have no idea what I'm doing.
 
 ## Installation
 
-Mayu::SWC is [published on rubygems.org](https://rubygems.org/gems/mayu-swc)
-and there are pre-built extensions for:
+TODO: Maybe publish this gem when it's useful enough.
 
-* `aarch64-linux`
-* `arm64-darwin`
-* `x86_64-darwin`
-* `x86_64-linux`
+~~Mayu::SWC is [published on rubygems.org](https://rubygems.org/gems/mayu-swc)
+and there are pre-built extensions for:~~
 
-```
-gem install mayu-swc
-```
+* ~~`aarch64-linux`~~
+* ~~`arm64-darwin`~~
+* ~~`x86_64-darwin`~~
+* ~~`x86_64-linux`~~
+
+~~`gem install mayu-swc`~~
 
 ## Usage
 
@@ -51,7 +51,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/mayu-live/swc.
+Bug reports and pull requests are welcome on GitHub at https://github.com/mayu-live/mayu-swc.
 
 ## License
 

@@ -1,6 +1,6 @@
 # Mayu::SWC
 
-This library transforms/minfies TypeScript and JavaScript.
+This library transforms/minifies TypeScript and JavaScript.
 
 It uses [swc](https://github.com/swc-project/swc) ([webpage](https://swc.rs/)),
 which takes JavaScript / TypeScript files using modern JavaScript features and

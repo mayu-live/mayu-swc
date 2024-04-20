@@ -1,0 +1,74 @@
+# vim: set filetype=rbs
+
+module Mayu
+  module CSS
+    VERSION: String
+
+    class Error < StandardError
+    end
+
+    class ParseError < Error
+    end
+
+    class ImportDependency
+      attr_reader url: String
+      attr_reader placeholder: String
+      attr_reader supports: String?
+      attr_reader media: String?
+      attr_reader loc: Loc
+    end
+
+    class UrlDependency
+      attr_reader url: String
+      attr_reader placeholder: String
+      attr_reader loc: Loc
+    end
+
+    class Export
+      attr_reader name: String
+      attr_reader composes: Array[ComposeLocal | ComposeDependency]
+    end
+
+    class ComposeLocal
+      attr_reader name: Symbol
+    end
+
+    class ComposeDependency
+      attr_reader name: Symbol
+      attr_reader specifier: String
+    end
+
+    class Loc
+      attr_reader file_path: String
+      attr_reader start: Pos
+      attr_reader end: Pos
+    end
+
+    class Pos
+      attr_reader line: Integer
+      attr_reader column: Integer
+    end
+
+    class TransformResult
+      attr_reader classes: Hash[String, String]
+      attr_reader elements: Hash[String, String]
+      attr_reader code: String
+      attr_reader source_map: String
+      attr_reader dependencies: Array[ImportDependency | UrlDependency]
+      attr_reader exports: Hash[String, Export]
+
+      def replace_dependencies: () { (ImportDependency | UrlDependency) -> String } -> String
+    end
+
+    class SerializeResult
+      attr_reader rules: Array[untyped]
+      attr_reader sources: Array[String]
+      attr_reader source_map_urls: Array[String?]
+      attr_reader license_comments: Array[String]
+    end
+
+    def self.transform: (String file, String code, ?minify: bool) -> TransformResult
+    def self.minify: (String file, String code) -> String
+    def self.serialize: (String file, String code) -> SerializeResult
+  end
+end

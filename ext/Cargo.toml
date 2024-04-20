@@ -1,0 +1,43 @@
+[package]
+name = "ext"
+version = "0.1.0"
+edition = "2021"
+authors = ["Andreas Alin <andreas.alin@gmail.com>"]
+license = "MPL"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+magnus = { version = "0.6.2" }
+rb-sys = { version = "*", default-features = false, features = ["stable-api-compiled-fallback"] }
+sha2 = "0.10.6"
+base64 = "0.21.0"
+anyhow = "1.0.79"
+sourcemap = "7.0.1"
+swc = "0.272.1"
+swc_common = { version = "0.33.15", features = ["tty-emitter"] }
+swc_compiler_base = { version = "0.6.0" }
+swc_config = "0.1.10"
+swc_core = { version = "0.89.1", features = [
+  "common_concurrent",
+  "common_sourcemap",
+  "ecma_ast",
+  "ecma_codegen",
+  "ecma_parser",
+  "ecma_minifier",
+  "ecma_minifier_concurrent",
+  "ecma_transforms",
+  "ecma_visit",
+] }
+swc_ecma_codegen = "0.147.2"
+swc_ecma_parser = "0.142.1"
+swc_ecma_transforms_base = "0.136.2"
+swc_ecma_transforms_typescript = "0.187.6"
+swc_ecma_utils = "0.126.1"
+swc_ecma_visit = "0.97.1"
+swc_error_reporters = "0.17.14"
+swc_malloc = "0.5.10"
+
+serde = { version = "1.0.118", features = ["derive"] }
